@@ -1,0 +1,19 @@
+{
+  "name": "VendaFácil Autopeças",
+  "short_name": "VendaFácil",
+  "description": "CRM PWA para recuperação de clientes em queda.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#111827",
+  "theme_color": "#16a34a",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

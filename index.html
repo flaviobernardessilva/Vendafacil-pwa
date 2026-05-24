@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#16a34a" />
+  <title>VendaFácil Autopeças</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <h1>VendaFácil</h1>
+      <p>CRM de recuperação de clientes</p>
+    </div>
+    <button id="installBtn" class="ghost" hidden>Instalar</button>
+  </header>
+
+  <main>
+    <section class="grid dashboard">
+      <div class="kpi"><span>Clientes</span><strong id="totalClientes">0</strong></div>
+      <div class="kpi danger"><span>Em queda</span><strong id="clientesQueda">0</strong></div>
+      <div class="kpi success"><span>Recuperados</span><strong id="recuperados">0</strong></div>
+      <div class="kpi money"><span>Potencial</span><strong id="potencial">R$ 0</strong></div>
+    </section>
+
+    <section class="card">
+      <h2>Novo cliente</h2>
+      <div class="form-grid">
+        <input id="nome" placeholder="Nome do cliente" />
+        <input id="telefone" placeholder="WhatsApp com DDD" />
+        <input id="vendedor" placeholder="Vendedor responsável" />
+        <input id="segmento" placeholder="Segmento: leve, pesada, moto..." />
+        <input id="vendaAnterior" type="number" placeholder="Venda ano anterior" />
+        <input id="vendaAtual" type="number" placeholder="Venda ano atual" />
+      </div>
+      <button onclick="adicionarCliente()">Adicionar cliente</button>
+    </section>
+
+    <section class="card">
+      <div class="row">
+        <h2>Clientes em recuperação</h2>
+        <select id="filtro" onchange="renderizar()">
+          <option value="todos">Todos</option>
+          <option value="Em recuperação">Em recuperação</option>
+          <option value="Negociação">Negociação</option>
+          <option value="Recuperado">Recuperado</option>
+          <option value="Perdido">Perdido</option>
+        </select>
+      </div>
+      <div id="listaClientes" class="lista"></div>
+    </section>
+  </main>
+
+  <nav class="bottom-nav">
+    <a href="#">Dashboard</a>
+    <a href="#listaClientes">Clientes</a>
+    <a href="#">Funil</a>
+    <a href="#">Relatório</a>
+  </nav>
+
+  <script src="app.js"></script>
+</body>
+</html>
